@@ -4,23 +4,21 @@ import PropTypes from 'prop-types';
 function GenericInput(props) {
   const { name, value, id, infoClass, onChange, optionsList } = props;
   return (
-    <div>
-      <select
-        id={ id }
-        data-testid={ id }
-        name={ name }
-        value={ value }
-        required
-        className={ infoClass }
-        onChange={ onChange }
-      >
-        { optionsList
-          .map((o) => (
-            <option key={ o.id } value={ o.id }>
-              { o.name }
-            </option>)) }
-      </select>
-    </div>
+    <select
+      id={ id }
+      data-testid={ id }
+      name={ name }
+      value={ value }
+      required
+      className={ infoClass }
+      onChange={ onChange }
+    >
+      { optionsList
+        .map((o) => (
+          <option key={ o.id } value={ o.id }>
+            { o.name }
+          </option>)) }
+    </select>
   );
 }
 

@@ -108,50 +108,59 @@ function Checkout() {
   return (
     <div className="flex flex-col bg-slate-200">
       <Header buttons={ buttons } userName={ userName } />
-      <div
-        className="flex flex-col max-w-2xl mx-auto py-16 px-4 sm:px-6
-          lg:max-w-7xl lg:px-8"
-      >
-        <div className="flex mb-12 justify-start bg-slate-200 md:mx-4">
-          <h2
-            className="text-2xl md:text-3xl font-medium tracking-tight text-gray-700"
-          >
-            Finalizar pedido
-          </h2>
-        </div>
-        <div>
-          <TableCheckout
-            orders={ finalSaleProducts }
-            removeProduct={ removeProduct }
-          />
-          <h3 data-testid="customer_checkout__element-order-total-price">
-            { convertPrice(totalPrice) }
-          </h3>
-        </div>
-        <FormCheckout
-          seller={ seller }
-          setSeller={ setSeller }
-          address={ address }
-          setAddress={ setAddress }
-          houseNum={ houseNum }
-          setHouseNum={ setHouseNum }
-          sellers={ sellers }
-          handleSubmitBtn={ handleSubmitBtn }
-        />
-        {errorMessage
-          && (
-            <div
-              className="w-1/2 text-center border-2 rounded-md border-amber-800 py-2"
+      <section className="flex flex-col items-center w-full min-h-[calc(100vh-86px)]">
+        <div
+          className="flex flex-col py-16 px-4 sm:px-6 lg:px-8 w-9/12"
+        >
+          <div className="flex mb-6 justify-start bg-slate-200 md:mx-4">
+            <h2
+              className="text-2xl md:text-3xl font-medium tracking-tight text-gray-700"
             >
-              <p
-                data-testid="common_register__element-invalid_register"
-                className="text-amber-800 text-sm font-medium"
+              Finalizar pedido
+            </h2>
+          </div>
+          <div className="flex flex-col justify-center items-end mb-16">
+            <TableCheckout
+              orders={ finalSaleProducts }
+              removeProduct={ removeProduct }
+            />
+            <h3
+              data-testid="customer_checkout__element-order-total-price"
+              className="px-8 py-3 border border-transparent font-medium
+              rounded-md text-black bg-slate-300 md:py-4
+              md:text-lg md:px-10 shadow-md rounded-lg overflow-hidden"
+            >
+              Total: R$
+              {' '}
+              { convertPrice(totalPrice) }
+            </h3>
+          </div>
+          <FormCheckout
+            seller={ seller }
+            setSeller={ setSeller }
+            address={ address }
+            setAddress={ setAddress }
+            houseNum={ houseNum }
+            setHouseNum={ setHouseNum }
+            sellers={ sellers }
+            handleSubmitBtn={ handleSubmitBtn }
+          />
+          {errorMessage
+            && (
+              <div
+                className="w-1/2 text-center border-2 rounded-md border-amber-800 py-2"
               >
-                Pedido não realizado, tente novamente!
-              </p>
-            </div>)}
-      </div>
-      <ToastContainer />
+                <p
+                  data-testid="common_register__element-invalid_register"
+                  className="text-amber-800 text-sm font-medium"
+                >
+                  Pedido não realizado, tente novamente!
+                </p>
+              </div>)}
+        </div>
+        <ToastContainer />
+
+      </section>
     </div>
   );
 }

@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 function GenericInput(props) {
   const { name, type, value, label, id, infoClass, placeholder, onChange } = props;
   return (
-    <div>
+    <div className="w-full">
       <label htmlFor={ id } className="sr-only">
         {label}
       </label>
