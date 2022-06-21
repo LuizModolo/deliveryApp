@@ -50,73 +50,99 @@ function FormAdminRegisterUsers({
   };
 
   return (
-    <div className="flex flex-col justify-center items-center">
-      <h2
-        className="text-2xl md:text-3xl font-medium tracking-tight text-gray-700"
+    <div className="flex flex-col py-16 px-4 sm:px-6 lg:px-8 w-9/12">
+      <div
+        className="flex flex-col justify-center items-start bg-slate-200 md:mx-4"
       >
-        Cadastrar novo usuário
-      </h2>
-      <div className="flex justify-between items-center">
-        <div className="flex flex-col justify-center items-center">
-          <p>Nome</p>
+        <h2
+          className="mb-6 text-2xl md:text-3xl font-medium tracking-tight text-gray-700"
+        >
+          Cadastrar novo usuário
+        </h2>
+      </div>
+      <div className="flex w-full justify-center mb-6">
+        <div className="flex flex-col w-full justify-center items-center">
+          <p
+            className="w-full rounded-l-lg px-5 py-3 border-b-2 border-gray-200
+            bg-indigo-400 text-left ext-xs font-semibold text-slate-100 uppercase
+            tracking-wider"
+          >
+            Nome
+          </p>
           <GenericInput
             id="admin_manage__input-name"
             name="name"
             type="text"
             label="Name"
             value={ name }
-            infoClass="appearance-none rounded-none relative block w-full px-3 py-2
-              border border-gray-300 placeholder-gray-500 text-gray-900
-              focus:outline-none focus:ring-indigo-500 focus:border-indigo-500
-              focus:z-10 sm:text-sm"
+            infoClass="rounded-l-lg mt-1 w-full px-5 py-2 border-none
+            border border-gray-300 placeholder-gray-500 text-gray-900
+            focus:outline-none focus:ring-indigo-500 focus:border-indigo-500
+            focus:z-10 sm:text-sm"
             placeholder="Nome e Sobrenome"
             onChange={ handleChangeName }
           />
         </div>
-        <div className="flex flex-col justify-center items-center">
-          <p>Email</p>
+        <div className="flex flex-col w-full justify-center items-center">
+          <p
+            className="w-full px-5 py-3 border-b-2 border-gray-200 bg-indigo-400
+            text-left ext-xs font-semibold text-slate-100 uppercase tracking-wider"
+          >
+            Email
+          </p>
           <GenericInput
             id="admin_manage__input-email"
             name="email"
             type="email"
             label="Email"
             value={ email }
-            infoClass="appearance-none rounded-none relative block w-full px-3 py-2
-              border border-gray-300 placeholder-gray-500 text-gray-900
-              focus:outline-none focus:ring-indigo-500 focus:border-indigo-500
-              focus:z-10 sm:text-sm"
+            infoClass="rounded-none mt-1 w-full px-5 py-2
+            border border-white placeholder-gray-500 text-gray-900 border-none
+            focus:outline-none focus:ring-indigo-500 focus:border-indigo-500
+            focus:z-10 sm:text-sm"
             placeholder="seu-email@mail.com"
             onChange={ handleChangeEmail }
           />
         </div>
-        <div className="flex flex-col justify-center items-center">
-          <p>Senha</p>
+        <div className="flex flex-col w-full justify-center items-center">
+          <p
+            className="w-full px-5 py-3 border-b-2 border-gray-200 bg-indigo-400
+            text-left ext-xs font-semibold text-slate-100 uppercase tracking-wider"
+          >
+            Senha
+          </p>
           <GenericInput
             id="admin_manage__input-password"
             name="senha"
             type="password"
             label="Senha"
             value={ password }
-            infoClass="appearance-none rounded-none relative block w-full px-3 py-2
-              border border-gray-300 placeholder-gray-500 text-gray-900
-              focus:outline-none focus:ring-indigo-500 focus:border-indigo-500
-              focus:z-10 sm:text-sm"
+            infoClass="rounded-none mt-1 w-full px-5 py-2
+            border border-white placeholder-gray-500 text-gray-900 border-none
+            focus:outline-none focus:ring-indigo-500 focus:border-indigo-500
+            focus:z-10 sm:text-sm"
             placeholder="*******"
             onChange={ handleChangePassword }
           />
         </div>
-        <div className="flex flex-col justify-center items-center">
-          <p>Tipo</p>
+        <div className="flex flex-col w-full justify-center items-center">
+          <p
+            className="w-full rounded-r-lg px-5 py-3 border-b-2 border-gray-200
+            bg-indigo-400 text-left ext-xs font-semibold text-slate-100 uppercase
+            tracking-wider"
+          >
+            Tipo
+          </p>
           <select
             data-testid="admin_manage__select-role"
             name="role"
             label="Role"
             value={ role }
             defaultValue="Selecione"
-            className="appearance-none rounded-none relative block w-full px-3 py-2
-              border border-gray-300 placeholder-gray-500 text-gray-900
-              focus:outline-none focus:ring-indigo-500 focus:border-indigo-500
-              focus:z-10 sm:text-sm"
+            className="rounded-r-lg mt-1 w-full px-5 py-2
+            border border-white placeholder-gray-500 text-gray-900
+            focus:outline-none focus:ring-indigo-500 focus:border-white
+            focus:z-10 sm:text-sm"
             onChange={ handleChangeRoles }
           >
             <option value="Selecione" disabled>
@@ -134,10 +160,10 @@ function FormAdminRegisterUsers({
       <GenericButton
         name="Cadastrar"
         id="admin_manage__button-register"
-        infoClassBtn="group relative w-full my-2 h-12 flex justify-center py-3 px-4
-        border border-transparent text-sm font-medium rounded-md text-white
-        bg-indigo-600 disabled:bg-indigo-400 hover:bg-indigo-700 focus:outline-none
-        focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+        infoClassBtn="group relative w-1/4 my-2 flex justify-center self-center
+        py-3 px-4 border border-transparent text-sm font-medium rounded-md text-white
+        bg-indigo-600 font-medium md:text-lg disabled:bg-indigo-400 hover:bg-indigo-700
+        focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
         onClick={ handleSubmitBtn }
         disabled={ btnIsDisabled }
       />
