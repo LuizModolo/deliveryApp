@@ -25,8 +25,9 @@ function DetailOrderHeader({
   console.log(orderStatus !== 'Em Trânsito');
   return (
     <div
-      className="flex px-4 bg-slate-100 justify-between items-center
-      shadow-md rounded-lg overflow-hidden mb-6 w-full"
+      className="flex flex-wrap lg:flex-nowrap px-4 py-2 lg:py-0 bg-slate-100
+      justify-center lg:justify-between items-center shadow-md rounded-lg
+      overflow-hidden mb-6 w-full"
     >
       <h2
         data-testid={
@@ -42,6 +43,7 @@ function DetailOrderHeader({
       { userRole === 'customer' && (
         <h3
           data-testid="customer_order_details__element-order-details-label-seller-name"
+          className="ml-4 lg:ml-0"
         >
           Vendedor:
           {' '}
@@ -51,6 +53,7 @@ function DetailOrderHeader({
         data-testid={
           `${userRole}_order_details__element-order-details-label-order-date`
         }
+        className="ml-4 lg:ml-0"
       >
         Feito em:
         {' '}
@@ -60,7 +63,8 @@ function DetailOrderHeader({
         data-testid={
           `${userRole}_order_details__element-order-details-label-delivery-status`
         }
-        className={ `${statusMapper[orderStatus]} text-white px-4 py-2 rounded-md` }
+        className={ `${statusMapper[orderStatus]} text-white px-4 py-2 rounded-md
+        ml-4 lg:ml-0 text-xs md:text-sm` }
       >
         {orderStatus}
       </p>
@@ -70,10 +74,11 @@ function DetailOrderHeader({
             type="button"
             onClick={ handleDeliveredBtn }
             data-testid="customer_order_details__button-delivery-check"
-            className="group relative min-w-44 my-2 flex justify-center py-2 px-4
-              border border-transparent text-sm font-medium rounded-md text-white
-              bg-indigo-600 disabled:bg-indigo-400 hover:bg-indigo-700 focus:outline-none
-              focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+            className="ml-4 lg:ml-0 group relative min-w-44 my-2 flex justify-center
+              py-2 px-3 md:px-4 border border-transparent text-xs md:text-sm
+              font-medium rounded-md
+              text-white bg-indigo-600 disabled:bg-indigo-400 hover:bg-indigo-700
+              focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
             name="Delivery Button"
             disabled={ orderStatus !== 'Em Trânsito' }
           >
@@ -85,9 +90,10 @@ function DetailOrderHeader({
               type="button"
               onClick={ handlePrepareBtn }
               data-testid="seller_order_details__button-preparing-check"
-              className="group relative min-w-44 my-2 flex justify-center py-2 px-4
-                border border-transparent text-sm font-medium rounded-md text-white
-                bg-indigo-600 disabled:bg-indigo-400 hover:bg-indigo-700
+              className="ml-4 lg:ml-0 group relative min-w-44 my-2 flex justify-center
+                py-2 px-3 md:px-4 border border-transparent text-xs md:text-sm font-medium
+                rounded-md text-white bg-indigo-600 disabled:bg-indigo-400
+                hover:bg-indigo-700
                 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
               name="Prepare Button"
               disabled={ orderStatus !== 'Pendente' }
@@ -98,10 +104,11 @@ function DetailOrderHeader({
               type="button"
               onClick={ handleToDeliverBtn }
               data-testid="seller_order_details__button-dispatch-check"
-              className="group relative min-w-44 my-2 flex justify-center py-2 px-4
-                border border-transparent text-sm font-medium rounded-md text-white
-                ml-4 bg-indigo-600 disabled:bg-indigo-400 hover:bg-indigo-700
-                focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+              className="group relative min-w-44 my-2 flex justify-center py-2 px-3
+                md:px-4 border border-transparent text-xs md:text-sm font-medium
+                rounded-md text-white ml-4 bg-indigo-600 disabled:bg-indigo-400
+                hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2
+                focus:ring-indigo-500"
               name="To Deliver Button"
               disabled={ orderStatus !== 'Preparando' }
             >

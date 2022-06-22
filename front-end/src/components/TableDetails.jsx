@@ -11,7 +11,10 @@ export default function TableDetails({ orders, role }) {
   };
 
   return (
-    <div className="inline-block min-w-full shadow-md rounded-lg overflow-hidden mb-6">
+    <div
+      className="inline-block w-full shadow-md rounded-lg overflow-x-auto
+      lg:overflow-hidden mb-6"
+    >
       <table className="min-w-full leading-normal">
         <thead>
           <tr>
@@ -78,6 +81,8 @@ export default function TableDetails({ orders, role }) {
                   data-testid={ `${dataPrice}${i}` }
                   className="px-5 py-3 border-b border-gray-300 bg-slate-100 text-sm"
                 >
+                  R$
+                  {' '}
                   { convertPrice((+e.price).toFixed(2)) }
 
                 </td>
@@ -87,6 +92,8 @@ export default function TableDetails({ orders, role }) {
                   }
                   className="px-5 py-3 border-b border-gray-300 bg-slate-100 text-sm"
                 >
+                  R$
+                  {' '}
                   { convertPrice((e.SaleProduct.quantity * +e.price).toFixed(2)) }
 
                 </td>

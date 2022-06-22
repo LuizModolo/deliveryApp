@@ -27,7 +27,7 @@ function OrdersCard({ orders, role }) {
 
   return (
     <div
-      className="flex flex-wrap justify-start mt-8"
+      className="flex flex-wrap justify-center lg:justify-start mt-8"
     >
       {orders.map(
         ({ id, deliveryAddress, deliveryNumber, saleDate, status, totalPrice }) => (
