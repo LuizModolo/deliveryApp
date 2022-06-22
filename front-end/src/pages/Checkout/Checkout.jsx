@@ -110,7 +110,7 @@ function Checkout() {
       <Header buttons={ buttons } userName={ userName } />
       <section className="flex flex-col items-center w-full min-h-[calc(100vh-86px)]">
         <div
-          className="flex flex-col py-16 px-4 sm:px-6 lg:px-8 w-9/12"
+          className="flex flex-col py-16 px-4 sm:px-6 lg:px-8 w-11/12 md:w-9/12"
         >
           <div className="flex mb-6 justify-start bg-slate-200 md:mx-4">
             <h2
