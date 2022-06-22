@@ -3,7 +3,10 @@ import React from 'react';
 
 export default function TableAdminManageUsers({ users, removeUser }) {
   return (
-    <div className="inline-block min-w-full shadow-md rounded-lg overflow-hidden mb-6">
+    <div
+      className="inline-block w-full shadow-md rounded-lg overflow-x-auto
+      lg:overflow-hidden mb-6"
+    >
       <table className="min-w-full leading-normal">
         <thead>
           <tr>

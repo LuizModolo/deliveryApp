@@ -76,7 +76,7 @@ function AdminManage() {
       <Header buttons={ [manageUserButton] } userName={ user.name } />
       <section className="flex flex-col items-center w-full min-h-[calc(100vh-86px)]">
         <div
-          className="w-full flex flex-col items-center justify-center"
+          className="flex flex-col items-center justify-center w-full"
         >
           <FormAdminRegisterUsers
             name={ name }
@@ -104,7 +104,7 @@ function AdminManage() {
                   Cadastro não registrado, tente novamente!
                 </p>
               </div>)}
-        <div className="flex flex-col py-2 px-4 sm:px-6 lg:px-8 w-9/12">
+        <div className="flex flex-col py-2 px-4 sm:px-6 lg:px-8 w-11/12 md:w-9/12">
           <div className="flex mb-6 justify-start bg-slate-200 md:mx-4">
             <h1
               className="text-2xl md:text-3xl font-medium tracking-tight text-gray-700"

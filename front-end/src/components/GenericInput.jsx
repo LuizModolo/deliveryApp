@@ -14,7 +14,7 @@ function GenericInput(props) {
         name={ name }
         type={ type }
         value={ value }
-        autoComplete={ name }
+        autoComplete="off"
         required
         className={ infoClass }
         placeholder={ placeholder }

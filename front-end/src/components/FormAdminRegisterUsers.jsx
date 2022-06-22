@@ -60,10 +60,11 @@ function FormAdminRegisterUsers({
           Cadastrar novo usuário
         </h2>
       </div>
-      <div className="flex w-full justify-center mb-6">
-        <div className="flex flex-col w-full justify-center items-center">
+      <div className="flex flex-col md:flex-row w-full justify-center mb-6">
+        <div className="flex md:flex-col w-full justify-center items-center mb-2 md:mb-0">
           <p
-            className="w-full rounded-l-lg px-5 py-3 border-b-2 border-gray-200
+            className="w-5/12 md:w-full rounded-l-lg px-5 py-2 md:px-4 md:py-3 border-b-2
+            border-gray-200
             bg-indigo-400 text-left ext-xs font-semibold text-slate-100 uppercase
             tracking-wider"
           >
@@ -75,18 +76,20 @@ function FormAdminRegisterUsers({
             type="text"
             label="Name"
             value={ name }
-            infoClass="rounded-l-lg mt-1 w-full px-5 py-2 border-none
-            border border-gray-300 placeholder-gray-500 text-gray-900
-            focus:outline-none focus:ring-indigo-500 focus:border-indigo-500
-            focus:z-10 sm:text-sm"
+            infoClass="rounded-r-lg md:rounded-r-none md:rounded-l-lg mt-0 md:mt-1
+            w-full px-5 py-2 md:py-[7px]
+            border border-white placeholder-gray-500 text-gray-900
+            focus:outline-none focus:ring-indigo-500 focus:border-white
+            focus:z-10 md:text-sm"
             placeholder="Nome e Sobrenome"
             onChange={ handleChangeName }
           />
         </div>
-        <div className="flex flex-col w-full justify-center items-center">
+        <div className="flex md:flex-col w-full justify-center items-center mb-2 md:mb-0">
           <p
-            className="w-full px-5 py-3 border-b-2 border-gray-200 bg-indigo-400
-            text-left ext-xs font-semibold text-slate-100 uppercase tracking-wider"
+            className="w-5/12 md:w-full rounded-l-lg md:rounded-l-none px-4 py-2 md:px-5
+            md:py-3 border-b-2 border-gray-200 bg-indigo-400 text-left ext-xs
+            font-semibold text-slate-100 uppercase tracking-wider"
           >
             Email
           </p>
@@ -96,18 +99,19 @@ function FormAdminRegisterUsers({
             type="email"
             label="Email"
             value={ email }
-            infoClass="rounded-none mt-1 w-full px-5 py-2
-            border border-white placeholder-gray-500 text-gray-900 border-none
-            focus:outline-none focus:ring-indigo-500 focus:border-indigo-500
-            focus:z-10 sm:text-sm"
+            infoClass="rounded-r-lg md:rounded-r-none mt-0 md:mt-1 w-full px-5
+            py-2.5 md:py-2 border border-white placeholder-gray-500 text-gray-900
+            border-none focus:outline-none focus:ring-indigo-500
+            focus:border-indigo-500 focus:z-10 sm:text-sm"
             placeholder="seu-email@mail.com"
             onChange={ handleChangeEmail }
           />
         </div>
-        <div className="flex flex-col w-full justify-center items-center">
+        <div className="flex md:flex-col w-full justify-center items-center mb-2 md:mb-0">
           <p
-            className="w-full px-5 py-3 border-b-2 border-gray-200 bg-indigo-400
-            text-left ext-xs font-semibold text-slate-100 uppercase tracking-wider"
+            className="w-5/12 md:w-full rounded-l-lg md:rounded-l-none px-4 py-2 md:px-5
+            md:py-3 border-b-2 border-gray-200 bg-indigo-400 text-left ext-xs
+            font-semibold text-slate-100 uppercase tracking-wider"
           >
             Senha
           </p>
@@ -117,19 +121,19 @@ function FormAdminRegisterUsers({
             type="password"
             label="Senha"
             value={ password }
-            infoClass="rounded-none mt-1 w-full px-5 py-2
-            border border-white placeholder-gray-500 text-gray-900 border-none
-            focus:outline-none focus:ring-indigo-500 focus:border-indigo-500
-            focus:z-10 sm:text-sm"
+            infoClass="rounded-r-lg md:rounded-r-none mt-0 md:mt-1 w-full px-5
+            py-2.5 md:py-2 border border-white placeholder-gray-500 text-gray-900
+            border-none focus:outline-none focus:ring-indigo-500
+            focus:border-indigo-500 focus:z-10 sm:text-sm"
             placeholder="*******"
             onChange={ handleChangePassword }
           />
         </div>
-        <div className="flex flex-col w-full justify-center items-center">
+        <div className="flex md:flex-col w-full justify-center items-center mb-2 md:mb-0">
           <p
-            className="w-full rounded-r-lg px-5 py-3 border-b-2 border-gray-200
-            bg-indigo-400 text-left ext-xs font-semibold text-slate-100 uppercase
-            tracking-wider"
+            className="w-5/12 md:w-full rounded-l-lg md:rounded-l-none md:rounded-r-lg
+            px-6 py-2 md:px-5 md:py-3 border-b-2 border-gray-200 bg-indigo-400 text-left
+            ext-xs font-semibold text-slate-100 uppercase tracking-wider"
           >
             Tipo
           </p>
@@ -139,10 +143,11 @@ function FormAdminRegisterUsers({
             label="Role"
             value={ role }
             defaultValue="Selecione"
-            className="rounded-r-lg mt-1 w-full px-5 py-2
+            className="rounded-r-lg mt-0 md:mt-1
+            w-full px-5 py-2.5 md:py-2
             border border-white placeholder-gray-500 text-gray-900
             focus:outline-none focus:ring-indigo-500 focus:border-white
-            focus:z-10 sm:text-sm"
+            focus:z-10 md:text-sm"
             onChange={ handleChangeRoles }
           >
             <option value="Selecione" disabled>
@@ -160,7 +165,7 @@ function FormAdminRegisterUsers({
       <GenericButton
         name="Cadastrar"
         id="admin_manage__button-register"
-        infoClassBtn="group relative w-1/4 my-2 flex justify-center self-center
+        infoClassBtn="group relative w-1/2 lg:w-1/3 my-2 flex justify-center self-center
         py-3 px-4 border border-transparent text-sm font-medium rounded-md text-white
         bg-indigo-600 font-medium md:text-lg disabled:bg-indigo-400 hover:bg-indigo-700
         focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
